@@ -27,7 +27,7 @@ module "labels" {
   environment = "test"
   label_order = ["name", "environment"]
   managedby   = "suresh yadav"
-  repository  = "https://github.com/sureshyadav76/terraform-gcp-labels"
+  repository  = "https://github.com/sureshyadav76/terraform-google-labels"
   attributes  = ["private"]
   extra_tags  = {
     Application = "Demo"
@@ -37,7 +37,7 @@ module "labels" {
 Please ensure you specify the correct 'source' path for the module.
 
 # Examples
-For detailed examples on how to use this module, please refer to the [Examples](https://github.com/sureshyadav76/terraform-gcp-labels/tree/master/_example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [Examples](https://github.com/sureshyadav76/terraform-google-labels/tree/master/_example) directory within this repository.
 
 # License
 This Terraform module is provided under the **MIT** License. Please see the LICENSE file for more details.
