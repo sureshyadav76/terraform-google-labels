@@ -1,6 +1,3 @@
-#Module      : locals
-#Description : This terraform module is designed to generate consistent label names and tags for resources. You can use terraform-labels to implement a strict naming convention.
-
 locals {
   label_order_defaults = {
     label_order = ["name", "environment"]
@@ -17,13 +14,10 @@ locals {
   id_labels = [for l in local.label_order : local.id_context[l] if length(local.id_context[l]) > 0]
   id        = lower(join(var.delimiter, local.id_labels, var.attributes))
 
-  enabled = var.enabled
-
   name        = var.enabled == true ? lower(format("%v", var.name)) : ""
   environment = var.enabled == true ? lower(format("%v", var.environment)) : ""
   managedby   = var.enabled == true ? lower(format("%v", var.managedby)) : ""
   repository  = var.enabled == true ? lower(format("%v", var.repository)) : ""
-  delimiter   = var.enabled == true ? lower(format("%v", var.delimiter)) : ""
   attributes  = var.enabled == true ? lower(format("%v", join(var.delimiter, compact(var.attributes)))) : ""
 
   tags_context = {
