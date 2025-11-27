@@ -22,7 +22,7 @@ You can use this module in your Terraform configuration like this:
 ```hcl
 module "labels" {
   source      = "sureshyadav76/labels/google"
-  version     = "1.0.1"
+  version     = "1.0.0"
   name        = "app"
   environment = "test"
   label_order = ["name", "environment"]
